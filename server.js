@@ -57,7 +57,7 @@ app.use(async (ctx, next) => {
         ctx.request.get("Access-Control-Allow-Request-Headers")
       );
     }
-    ctx.response.status = 204; // No content
+    ctx.response.status = 204; 
   }
 });
 
@@ -71,7 +71,7 @@ app.use(
 );
 
 function tickets() {
-  //отбор заявок
+  
   const arr = [];
   ticketsFull.forEach((elem) => {
     arr.push(new Ticket(elem.id, elem.name, elem.status, elem.created));
@@ -80,7 +80,7 @@ function tickets() {
 }
 
 function findTicket(id) {
-  // поиск заявки
+  
   const result = ticketsFull.find((ticket) => ticket.id === id);
   return result;
 }
